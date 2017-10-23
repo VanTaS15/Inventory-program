@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  name="testParam" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9bf04a7e-b2e6-4514-88f0-af1f18c193f7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="myMySQL"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Barcode" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     Barcode,
+     Name,
+     Quantity,
+     Location
+FROM
+     products]]>
+	</queryString>
+	<field name="Barcode" class="java.lang.String"/>
+	<field name="Name" class="java.lang.String"/>
+	<field name="Quantity" class="java.lang.String"/>
+	<field name="Location" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="154" y="-18" width="280" height="48" uuid="25fa6554-e995-4d8c-b9c2-e100a8bdd6ca"/>
+				<textElement>
+					<font fontName="Arial Black" size="24"/>
+				</textElement>
+				<text><![CDATA[Products Location]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="-30" y="19" width="636" height="11" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="22673d1b-465e-4902-8820-059fce9b60b0"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="3" width="66" height="30" uuid="0d0da76b-e530-44b6-8666-95382a4bfc0f"/>
+				<text><![CDATA[Barcode]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="168" y="3" width="49" height="30" uuid="478a761d-29ec-4991-a53b-47ca5072f7ce"/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="327" y="3" width="107" height="30" uuid="78c610c5-72a6-4cb5-9cc3-c56ef6dddcca"/>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="479" y="3" width="63" height="30" uuid="ec4c57ed-cec3-4fad-8ace-e8085fc0f9c7"/>
+				<text><![CDATA[Location]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="49" splitType="Stretch">
+			<textField>
+				<reportElement x="17" y="18" width="66" height="30" uuid="109c6e95-cfcb-471c-a8a7-eafda92a8333"/>
+				<textFieldExpression><![CDATA[$F{Barcode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="168" y="15" width="70" height="30" uuid="c4fdb430-c346-4308-8712-1329e4bd802e"/>
+				<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="327" y="15" width="63" height="30" uuid="02892c18-6a62-4bd3-ba99-d239b5b7db54"/>
+				<textFieldExpression><![CDATA[$F{Quantity}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="0" width="525" height="15" uuid="b30b6bea-e22d-45e8-b9b4-db3f3358cc52"/>
+				<text><![CDATA[-------------------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="479" y="15" width="63" height="30" uuid="1802ccaa-4caf-4866-8d3c-79465919ff90"/>
+				<textFieldExpression><![CDATA[$F{Location}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="9" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
